@@ -20,7 +20,7 @@
         .registerTable > p{
             display: block;
             width: 500px;
-            margin-bottom: 30px;
+            height: 60px;
         }
         
         p > label{
@@ -48,19 +48,60 @@
         button:hover{
             background-color: rgb(236, 77, 77);
         }
+        .userName > span{ 
+            /* display: none;   */
+        }
+        .registerTable span{
+
+            display: inline-block;
+            margin-left: 80px;
+            height: 30px;
+            width: 400px;
+            padding-left: 10px;
+            line-height: 30px;
+            font-size: 12px;
+            /* display: none; */
+            background-color: #ccc 
+        }
+        
     </style>
     <title>注册</title>
 </head>
 
 <body>
     <div class="registerTable">
-        <p class="userName"><label for="">用&ensp;户&ensp;名：</label><input type="text"><br /></p>
-        <p class="tel"><label for="">手&ensp;机&ensp;号：</label><input type="text"><br /></p>
-        <p class="email"><label for="">电子邮箱：</label><input type="text"><br /></p>
-        <p class="password"><label for="">设置密码：</label><input type="text"><br /></p>
-        <p class="passwordAgain"><label for="">再输一次：</label><input type="text"><br /></p>
+        <p class="userName">
+            <label for="">用&ensp;户&ensp;名：</label><input type="text"><br />
+            <span class="nameFalse">账号不能为空</span>
+            <span>账号正确</span>
+        </p>
+
+        <p class="tel">
+            <label for="">手&ensp;机&ensp;号：</label><input type="text"><br />
+            <span>您输入的手机号码有误</span>
+            <span>账号正确</span>
+        </p>
+
+        <p class="email">
+            <label for="">电子邮箱：</label><input type="text"><br />
+            <span>你输入的电子邮箱有误</span>
+        </p>
+        <p class="password">
+            <label for="">设置密码：</label><input type="text"><br />
+            <span>您输入的密码有误</span>
+        </p>
+        <p class="passwordAgain">
+            <label for="">再输一次：</label><input type="text"><br />
+            <span>你输入的密码与上一次不一致</span>
+        </p>
         <button class="btn-register">注册</button>
     </div>
+
+    <script src="js/register.js"></script>
+    <script>
+        register.init(".registerTable");
+
+    </script>
 </body>
 
 </html>
